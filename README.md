@@ -1,4 +1,4 @@
-# GreedyNav
+# Greedy Navigation
 Include the style and script files then put the `<nav>` code in the `<body>` of your project. When the user resizes the window the nav will shrink, any overflowing items will be removed from the visible list and get prepended to a list of vertically stacked items that are hidden. The user is notified of this action by a `count` badge next to a hamburger icon at the end of the menu, which acts as a dropdown trigger button for the hidden list.
 
 ##Usage
