@@ -1,0 +1,167 @@
+@import "normalize";
+
+@color-1: #ff9800;
+@color-2: #f57c00;
+@color-3: #ef6c00;
+@white-text: rgba(255,255,255,0.87);
+@dark-text: rgba(0,0,0,0.87);
+
+body {
+  padding: 30px;
+  background: @color-1;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+p {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+a {
+  color: #fff;
+}
+
+// reset
+.greedy ul,
+.greedy li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.greedy {
+
+  position: relative;
+  min-width: 250px;
+  background: #fff;
+
+  button {
+    position: absolute;
+    right: 0;
+    border: 0;
+    height: 100%;
+    padding: 0 14px;
+    outline: none;
+    background-color: @color-2;
+    color: #fff;
+    cursor: pointer;
+
+    &:after {
+      content: attr(count);
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      left: -15px;
+      top: 13px;
+      background-color: @color-3;
+      color: #fff;
+      font-size: 14px;
+      line-height: 28px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      font-weight: bold;
+    }
+
+    &:hover {
+      background-color: @color-3;
+    }
+
+    &:hover:after {
+      transform: scale(1.1);
+    }
+  }
+
+  .hamburger {
+    position: relative;
+    width: 32px;
+    height: 4px;
+    background: #fff;
+    margin: auto;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 32px;
+      height: 4px;
+      background: #fff;
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      bottom: -8px;
+    }
+  }
+
+  .visible-links {
+    display: inline-table;
+    li {
+      display: table-cell;
+      padding: 20px 30px;
+      border-right: 1px solid @color-1;
+      font-size: 18px;
+
+      &:first-child {
+        font-weight: bold;
+        a {
+          color: @color-1 !important;
+        }
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+      a {
+        color: @color-1;
+        text-decoration: none;
+
+        &:hover {
+          color: @color-3;
+        }
+      }
+    }
+  }
+
+  .hidden-links {
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    background: #fff;
+
+    li {
+      padding: 20px 30px;
+      font-size: 18px;
+      border-top: 1px solid @color-2;
+
+
+      a {
+        color: @color-2;
+        text-decoration: none;
+
+        &:hover {
+          color: @color-3;
+        }
+      }
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+}
