@@ -3,7 +3,6 @@ GreedyNav.js - http://lukejacksonn.com/actuate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Luke Jackson
 */
-
 var $nav = $('nav.greedy');
 var $button = $('nav.greedy button');
 var $vlinks = $('.visible-links');
@@ -13,17 +12,24 @@ var breaks = [];
 $button.on('click', function() {
   $hlinks.toggleClass('hidden');
 })
-
+$(function () {
+  update();
+});
 $(window).resize(function () {
-
+  update();
+});
+function update(){
   // Nav is overflowing
-  if(($nav.width()-$button.width()-15) < $vlinks.width()) {
+  if(($nav.width()-$button.width()) < $vlinks.width()) {
     $vlinks.children().last().prependTo($hlinks);
     breaks.push($nav.width());
     if($button.hasClass('hidden')) {
       $button.removeClass('hidden');
     }
-  } else {
+  }
+
+  // Nav is not overflowing
+  else {
     // Another link could be made visible
     if($nav.width()>breaks[breaks.length-1]) {
       $hlinks.children().first().appendTo($vlinks);
@@ -38,4 +44,4 @@ $(window).resize(function () {
   // Keep counter updated
   $button.attr("count", breaks.length);
 
-});
+};
