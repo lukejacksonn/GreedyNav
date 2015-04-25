@@ -4,23 +4,26 @@ Include the style and script files then put the `<nav>` code in the `<body>` of 
 ##Usage
 
 ```html
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="script.js"></script>
-
-<nav class='greedy'>
-<button><div class="hamburger"></div></button>
-  <ul class='visible-links'>
-    <li><a href='#'>Greedy</a></li>
-    <li><a href='#'>navigation</a></li>
-    <li><a href='#'>that</a></li>
-    <li><a href='#'>handles</a></li>
-    <li><a href='#'>overflowing</a></li>
-    <li><a href='#'>menu</a></li>
-    <li><a href='#'>elements</a></li>
-    <li><a href='#'>effortlessly</a></li>
-  </ul>
-  <ul class='hidden-links hidden'></ul>
-</nav>
+<head>
+<link href="greedynav.css" rel="stylesheet" type="text/css" >
+<script src="greedynav.js"></script>
+</head>
+<body>
+  <nav class='greedy-nav'>
+  <button><div class="hamburger"></div></button>
+    <ul class='visible-links'>
+      <li><a href='#'>Greedy</a></li>
+      <li><a href='#'>navigation</a></li>
+      <li><a href='#'>that</a></li>
+      <li><a href='#'>handles</a></li>
+      <li><a href='#'>overflowing</a></li>
+      <li><a href='#'>menu</a></li>
+      <li><a href='#'>elements</a></li>
+      <li><a href='#'>effortlessly</a></li>
+    </ul>
+    <ul class='hidden-links hidden'></ul>
+  </nav>
+</body>
 ```
 
 ## TODO
