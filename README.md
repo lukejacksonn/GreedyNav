@@ -28,7 +28,6 @@ Include the style and script files then put the `<nav>` code in the `<body>` of 
 
 ## TODO
 
-* Cleanup style.less
-* Add debounced resize
+* ~~Cleanup greedynav.less~~
+* ~~Add debounced resize~~
 * Make into a web component
-* Make into a react and angular component
