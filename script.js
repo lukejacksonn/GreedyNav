@@ -39,3 +39,4 @@ $(window).resize(function () {
   $button.attr("count", breaks.length);
 
 });
+});

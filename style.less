@@ -1,8 +1,45 @@
-@color-1: #ff9800; 
-@color-2: #f57c00; 
-@color-3: #ef6c00;
+@import "normalize";
 
-nav.greedy {
+@color-1: #ff9800;
+@color-2: #f57c00;
+@color-3: #ef6c00;
+@white-text: rgba(255,255,255,0.87);
+@dark-text: rgba(0,0,0,0.87);
+
+body {
+  padding: 30px;
+  background: @color-1;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+p {
+  color: #fff;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+a {
+  color: #fff;
+}
+
+// reset
+.greedy ul,
+.greedy li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.greedy {
 
   position: relative;
   min-width: 250px;
@@ -112,13 +149,17 @@ nav.greedy {
       font-size: 18px;
       border-top: 1px solid @color-2;
 
+
       a {
         color: @color-2;
         text-decoration: none;
 
-          &:hover {
-            color: @color-3;
-          }
+        &:hover {
+          color: @color-3;
+        }
+        &:hover {
+          color: @color-3;
+        }
       }
     }
   }
