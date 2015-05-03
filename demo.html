@@ -2,32 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Greedy Nav</title>
+  <title>Greedy Navigation</title>
 
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="greedynav.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" type="text/css" href="greedynav.css">
 
+  <style type="text/css">
+
+    body {
+        padding: 30px;
+        background: #ff9800;
+        font-family: Helvetica, sans-serif;
+    }
+
+    h1 {
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 50px;
+      font-size: 24px;
+    }
+
+    p {
+      color: #fff;
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    a {
+      color: #fff;
+    }
+
+  </style>
 
 </head>
 <body>
 
-  <nav class='greedy'>
-    <button><div class="hamburger"></div></button>
-    <ul class='visible-links'>
-      <li><a href='#'>Greedy</a></li>
-      <li><a href='#'>navigation</a></li>
-      <li><a href='#'>that</a></li>
-      <li><a href='#'>handles</a></li>
-      <li><a href='#'>overflowing</a></li>
-      <li><a href='#'>menu</a></li>
-      <li><a href='#'>elements</a></li>
-      <li><a href='#'>effortlessly</a></li>
-    </ul>
-    <ul class='hidden-links hidden'></ul>
-  </nav>
+<nav class='greedy-nav'>
+<button><div class="hamburger"></div></button>
+  <ul class='visible-links'>
+    <li><a target="_blank" href='https://github.com/lukejacksonn/GreedyNav'>Greedy</a></li>
+    <li><a href='#'>navigation</a></li>
+    <li><a href='#'>that</a></li>
+    <li><a href='#'>handles</a></li>
+    <li><a href='#'>overflowing</a></li>
+    <li><a href='#'>menu</a></li>
+    <li><a href='#'>elements</a></li>
+    <li><a href='#'>effortlessly</a></li>
+  </ul>
+  <ul class='hidden-links hidden'></ul>
+</nav>
+<h1>Resize the window</h1>
+<p>(animations with <a target="_blank" href="http://codepen.io/lukejacksonn/pen/gpOrmd">actuate</a> coming soon)</p>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.3.min.js"><\/script>')</script> -->
-  <script src="script.js"></script>
 </body>
 </html>
