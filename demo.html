@@ -12,42 +12,25 @@
 
   <style type="text/css">
 
-    body {
-      min-width: 320px;
-      padding: 30px;
-      background: #ff9800;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
       font-family: Helvetica, sans-serif;
     }
 
-    h1 {
-      color: #fff;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 50px;
-      font-size: 24px;
-    }
-
-    p {
-      color: #fff;
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    a {
-      color: #fff;
-    }
+    body { padding: 2rem; }
 
   </style>
 
 </head>
 <body>
 
-<nav class='greedy-nav'>
-<button><div class="hamburger"></div></button>
-  <ul class='visible-links'>
-    <li><a target="_blank" href='https://github.com/lukejacksonn/GreedyNav'>Greedy</a></li>
-    <li><a href='#'>navigation</a></li>
+<nav class='greedy'>
+  <h1>GreedyNav</h1>
+  <ul class='links'>
+    <li><a href='#'>navbar</a></li>
     <li><a href='#'>that</a></li>
     <li><a href='#'>handles</a></li>
     <li><a href='#'>overflowing</a></li>
@@ -55,10 +38,9 @@
     <li><a href='#'>elements</a></li>
     <li><a href='#'>effortlessly</a></li>
   </ul>
+  <button>MENU</button>
   <ul class='hidden-links hidden'></ul>
 </nav>
-<h1>Resize the window</h1>
-<p>(animations with <a target="_blank" href="http://codepen.io/lukejacksonn/pen/gpOrmd">actuate</a> coming soon)</p>
 
 </body>
 </html>
