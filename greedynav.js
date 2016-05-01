@@ -6,7 +6,6 @@ Copyright (c) 2015 Luke Jackson
 
 $(function() {
 
-  var $nav = $('nav.greedy');
   var $btn = $('nav.greedy button');
   var $vlinks = $('nav.greedy .links');
   var $hlinks = $('nav.greedy .hidden-links');
