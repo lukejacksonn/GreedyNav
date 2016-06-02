@@ -39,6 +39,7 @@ $(function() {
     } else if (availableSpace > breakWidths[numOfVisibleItems]) {
       $hlinks.children().first().appendTo($vlinks);
       numOfVisibleItems += 1;
+      check();
     }
     // Update the button accordingly
     $btn.attr("count", numOfItems - numOfVisibleItems);
