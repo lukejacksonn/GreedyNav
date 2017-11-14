@@ -5,7 +5,7 @@ Include `greedynav.css` and `greedynav.js` on the page and put the `<nav>` code 
 
 http://codepen.io/lukejacksonn/pen/BowbWE
 
-##Usage
+## Usage
 
 ```html
 <head>
