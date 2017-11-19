@@ -67,7 +67,14 @@ $(function() {
   }).on('mouseenter', function() {
     // Mouse is back, cancel the timer
     clearTimeout(timer);
-  })
+  });
+
+  // close when clicking somewhere else
+  $('body').click(function(e) {
+    if($(e.target).closest('nav.greedy').length === 0) {
+      $hlinks.addClass('hidden');
+    }
+  });
 
   check();
 
