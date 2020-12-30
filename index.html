@@ -1,0 +1,134 @@
+<style>
+  body {
+    background: #111;
+    padding: 2rem;
+  }
+</style>
+
+<script type="module">
+
+    import useGreedy from "./index.js";
+    import { render, h, useState, useRef, html } from 'https://npm.reversehttp.com/preact,preact/hooks,htm/preact';
+
+    import css from 'https://unpkg.com/csz';
+
+    const navItems = [
+      { href: '#', text: 'flexible' },
+      { href: '#', text: 'navigation' },
+      { href: '#', text: 'that' },
+      { href: '#', text: 'handles' },
+      { href: '#', text: 'overflowing' },
+      { href: '#', text: 'menu' },
+      { href: '#', text: 'items' },
+      { href: '#', text: 'effortlessly' },
+    ]
+
+    const style = {
+      nav: css`
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-family: sans-serif;
+        background: #333;
+        padding: 0.62rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 1rem 1rem rgba(0,0,0,0.2);
+      `,
+      visibleItems: css`
+        display: flex;
+        flex: 1 1 100%;
+        min-width: 0;
+        & > * { border-left: 1px solid #222; } 
+      `,
+      hiddenItems: css`
+        background: #222;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(-5%, calc(100% + 0.5rem));
+        border-radius: 1rem;
+        & > *+* { border-top: 1px solid #1a1a1a; } 
+        &:not(:empty) {
+          box-shadow: 0 0.5rem 0.5rem 0.5rem rgba(0,0,0,0.2);
+          padding: 0.62rem 0;
+          &:before {
+            content: '';
+            position: absolute;
+            top:0;
+            right: 0;
+            width: 2rem;
+            height: 2rem;
+            transform: rotate(45deg) translate(-100%, 38%);
+            background: inherit;
+          }
+        }
+      `,
+      item: css`
+        display: block;
+        color: rgba(255, 255, 255, 0.62);
+        padding: 1rem 2rem;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.1ch;
+        text-decoration: none;
+        font-size: 1.1rem;
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+      `,
+      menuButton: css`
+        position: relative;
+        background: #222;
+        border: 0;
+        color: #fff;
+        font-weight: bold;
+        padding: 0.9rem 1.62rem;
+        border-top-left-radius: 0.62rem;
+        border-bottom-left-radius: 0.62rem;
+        border-top-right-radius: 0.62rem;
+        border-bottom-right-radius: 0.62rem;
+        font-size: 1rem;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        & > *+* { margin-left: 1rem; }
+        span:last-child {
+          display: block;
+          margin-top: -0.3rem;
+          font-size: 1.3rem;
+        }
+      `
+    }
+
+    const App = () => {
+        const { ref, visibleItems, hiddenItems, showHidden, setShowHidden } = useGreedy(navItems);
+        return html`
+          <nav className=${style.nav}>
+            <h1 className=${css`line-height: 0rem; padding: 0 2rem 0 1rem; color: #fff`}>Greedy</h1>
+            <div ref=${ref} className=${style.visibleItems}>
+              ${visibleItems.map(i => html`
+                <a style=${i.style} className=${style.item} href=${i.href}>
+                  ${i.text}
+                </a>
+              `
+              )}
+            </div>
+            <div className=${style.hiddenItems}>
+              ${showHidden && hiddenItems.map(i => html`
+                <a className=${style.item} href=${i.href}>${i.text}</a>
+              `)}  
+            </div>
+            ${hiddenItems.length > 0 && html`
+              <button className=${style.menuButton} onClick=${() => setShowHidden(true)}>
+                <span>MORE</span><span>\u2630</span>
+              </button>
+            `}
+          </nav>
+        `
+    };
+
+    render(h(App), document.body)
+
+
+</script>
